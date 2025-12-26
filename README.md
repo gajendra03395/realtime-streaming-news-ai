@@ -67,6 +67,17 @@ python app.py
 
 ---
 
+## Environment Setup
+
+This project requires an external News API key.
+
+Create a `.env` file in the root directory and add:
+
+GNEWS_API_KEY=your_api_key_here
+
+For security reasons, this file is excluded from version control.
+
+
 ## Key Features
 Fully automated data ingestion
 Real-time streaming updates
