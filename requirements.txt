@@ -1,0 +1,3 @@
+pathway 
+requests 
+pyhton-dotenv
