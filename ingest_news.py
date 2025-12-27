@@ -21,7 +21,7 @@ def fetch_and_save_news():
     data = r.json()
 
     if "articles" not in data:
-        print("❌ API ERROR:", data)
+        print(" API ERROR:", data)
         return
 
     titles = []
@@ -31,18 +31,18 @@ def fetch_and_save_news():
             titles.append(title)
 
     if not titles:
-        print("⚠️ No new news")
+        print(" No new news")
         return
 
-    # overwrite file each minute (clean)
+    # overwrite file each minute
     with open(DATA_FILE, "w") as f:
         for t in titles:
             f.write(t.strip() + "\n")
 
-    print(f"✅ NEWS UPDATED ({len(titles)} items)")
+    print(f" NEWS UPDATED ({len(titles)} items)")
 
-# 🔁 AUTO LOOP: every 60 seconds
+# AUTO LOOP: every 60 seconds
 while True:
     fetch_and_save_news()
-    print("⏳ Waiting 60 seconds...\n")
+    print(" Waiting 60 seconds...\n")
     time.sleep(60)
